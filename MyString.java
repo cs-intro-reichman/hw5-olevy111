@@ -130,21 +130,28 @@ public class MyString {
      * @param str2 - a string  "committee"
      * @return a string consisting of str1 minus all the characters of str2  "comit"
      */
-    public static String remove(String str1, String str2) {
-        if (str2 == null || str2.isEmpty()) {
-            return str1; 
-        }
+    public static String remove(String str2, String str1) {
         String newstr = "";
-        for (int i = 0; i < str1.length(); i++) {
-            char c = str1.charAt(i);
-            if (str2.indexOf(c) == -1)
-            { 
-                newstr = newstr + c; 
+        String newname = str1; // עותק של str1
+        
+        for (int i = 0; i < str2.length(); i++) {
+            int count = 0;
+        
+            for (int j = 0; j < newname.length(); j++) { 
+                if (str2.charAt(i) == newname.charAt(j)) {
+                    count++;
+                    // מחיקת התו מתוך newname
+                    newname = newname.substring(0, j) + newname.substring(j + 1);
+                    break;
+                }
+            }
+            
+            if (count == 0) {
+                newstr = newstr + str2.charAt(i);  // אם התו לא נמצא ב-str1, הוסף אותו ל-newstr
             }
         }
         return newstr;
     }
-
     /**
      * Returns a string consisting of the given string, with the given 
      * character inserted randomly somewhere in the string.
