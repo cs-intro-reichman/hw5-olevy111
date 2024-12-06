@@ -86,6 +86,10 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
+        if (str == null || str.length() == 0) 
+        {
+            return "";
+        }
         String newstr = "";
         for(int i=0; i<str.length()-1; i++)
         {
@@ -110,9 +114,9 @@ public class MyString {
         String letters = "";
         for(int i=0; i<n; i++)
         {
-            int num = (int)(Math.random()*25) + 97;
-            System.out.print((char)num);
-           //letters = letters + ()
+            int num = (int)(Math.random()*26) + 97;
+           // System.out.print((char)num);
+           letters = letters + (char)num;
         }
         return letters;
     }
@@ -127,22 +131,15 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2  "comit"
      */
     public static String remove(String str1, String str2) {
+        if (str2 == null || str2.isEmpty()) {
+            return str1; 
+        }
         String newstr = "";
-        String newname = str1;
-        for (int i = 0; i < str2.length(); i++) {
-            int count = 0;
-            for (int j = 0; j < newname.length(); j++)
+        for (int i = 0; i < str1.length(); i++) {
+            char c = str1.charAt(i);
+            if (str2.indexOf(c) == -1)
             { 
-                if (str2.charAt(i) == newname.charAt(j))
-                {
-                    count++;
-                    newname = newname.substring(0, j) + newname.substring(j + 1); 
-                    break;
-                }
-            }
-            if (count == 0)
-            {
-                newstr = newstr + str2.charAt(i);
+                newstr = newstr + c; 
             }
         }
         return newstr;
