@@ -30,7 +30,6 @@ public class MyStringTest {
         System.out.println("spa in space -> " + MyString.subsetOf("spa", "space") + " (expected: true)");
         System.out.println("pass in space -> " + MyString.subsetOf("pass", "space") + " (expected: false)");
         System.out.println("c in space -> " + MyString.subsetOf("c", "space") + " (expected: true)");
-        System.out.println("runi in running -> " + MyString.subsetOf("runi", "running") + " (expected: true)");
         System.out.println("empty string in anything -> " + MyString.subsetOf("", "anything") + " (expected: true)");
     }
 

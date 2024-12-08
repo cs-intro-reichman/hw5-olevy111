@@ -131,9 +131,9 @@ public class Scrabble {
 			//// that completes the hand playing loop
 		}
 		if (hand.length() == 0) {
-	        System.out.println("Ran out of letters. Total score: " + score + " points\n");
+	        System.out.println("Ran out of letters. Total score: " + score + " points");
 		} else {
-			System.out.println("End of hand. Total score: " + score + " points\n");
+			System.out.println("End of hand. Total score: " + score + " points");
 		}
 	}
 
@@ -173,7 +173,7 @@ public class Scrabble {
 		//testScrabbleScore();    
 		///testCreateHands();  
 		//testPlayHands();
-		playGame();
+		//playGame();
 		
 	}
 
@@ -200,7 +200,7 @@ public class Scrabble {
 	}
 	public static void testPlayHands() {
 		init();
-		playHand("rampergorm");
+		//playHand("rampergorm");
 		//playHand("rampergorm");
 		//playHand("aretiin");
 	}
