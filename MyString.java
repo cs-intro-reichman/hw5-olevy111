@@ -28,7 +28,6 @@ public class MyString {
      * @return the number of times c appears in str
      */
     public static int countChar(String str, char ch) {
-        
         int count = 0;
         for (int i = 0; i < str.length(); i++) 
         {
@@ -51,13 +50,12 @@ public class MyString {
      * @param str2 - a string
      * @return true is str1 is a subset of str2, false otherwise
      */
-    public static boolean subsetOf(String str1, String str2) {
+    public static boolean subsetOf(String str1, String str2) {    //runi   running
          if (str1.length()>str2.length())
          {
             return false;
          }
          int count=0;
-         
          for (int i = 0; i < str1.length(); i++) 
          {
              for ( int j=0; j<str2.length(); j++)
@@ -66,7 +64,7 @@ public class MyString {
                 {
                     count++;
                     str2 = str2.substring(0,j) + str2.substring(j+1);
-
+                    break;
                 }
              }
          }
@@ -132,22 +130,18 @@ public class MyString {
      */
     public static String remove(String str2, String str1) {
         String newstr = "";
-        String newname = str1; // עותק של str1
-        
+        String newname = str1; 
         for (int i = 0; i < str2.length(); i++) {
             int count = 0;
-        
             for (int j = 0; j < newname.length(); j++) { 
                 if (str2.charAt(i) == newname.charAt(j)) {
                     count++;
-                    // מחיקת התו מתוך newname
                     newname = newname.substring(0, j) + newname.substring(j + 1);
                     break;
                 }
             }
-            
             if (count == 0) {
-                newstr = newstr + str2.charAt(i);  // אם התו לא נמצא ב-str1, הוסף אותו ל-newstr
+                newstr = newstr + str2.charAt(i);
             }
         }
         return newstr;
