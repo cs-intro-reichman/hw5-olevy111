@@ -114,19 +114,19 @@ public class Scrabble {
 			{
 				break;
 			}
-			if(isWordInDictionary(input)==true && MyString.subsetOf(input, hand)==true)
+			else if (MyString.subsetOf(input, hand)==false)
 			{
-				score = score + wordScore(input);
-				hand = MyString.remove(hand, input);
-				System.out.println(input + " earned "+ wordScore(input) + " points. Score: "+ score + " points");
+				System.out.println("Invalid word. Try again.");
 			}
 			else if (isWordInDictionary(input)==false)
 			{
 				System.out.println("No such word in the dictionary. Try again.");
 			}
-			else if (MyString.subsetOf(input, hand)==false)
+			else if (isWordInDictionary(input)==true && MyString.subsetOf(input, hand)==true)
 			{
-				System.out.println("Invalid word. Try again.");
+				score = score + wordScore(input);
+				hand = MyString.remove(hand, input);
+				System.out.println(input + " earned "+ wordScore(input) + " points. Score: "+ score + " points");
 			}
 			//// that completes the hand playing loop
 		}
