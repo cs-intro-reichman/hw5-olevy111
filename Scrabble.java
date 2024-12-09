@@ -103,7 +103,7 @@ public class Scrabble {
 		// the stream of characters coming from the keyboard. Used for reading the user's inputs.   
 		In in = new In();
 		while (hand.length() > 0) {
-			System.out.println("\nCurrent Hand: " + MyString.spacedString(hand));
+			System.out.println("Current Hand: " + MyString.spacedString(hand));
 			System.out.println("Enter a word, or '.' to finish playing this hand:");
 			// Reads the next "token" from the keyboard. A token is defined as a string of 
 			// non-whitespace characters. Whitespace is either space characters, or  
@@ -117,16 +117,19 @@ public class Scrabble {
 			else if (MyString.subsetOf(input, hand)==false)
 			{
 				System.out.println("Invalid word. Try again.");
+				System.out.println("");
 			}
 			else if (isWordInDictionary(input)==false)
 			{
 				System.out.println("No such word in the dictionary. Try again.");
+				System.out.println("");
 			}
 			else if (isWordInDictionary(input)==true && MyString.subsetOf(input, hand)==true)
 			{
 				score = score + wordScore(input);
 				hand = MyString.remove(hand, input);
 				System.out.println(input + " earned "+ wordScore(input) + " points. Score: "+ score + " points");
+				System.out.println("");
 			}
 			//// that completes the hand playing loop
 		}
