@@ -126,7 +126,7 @@ public class Scrabble {
 			}
 			else if (isWordInDictionary(input)==true && MyString.subsetOf(input, hand)==false)
 			{
-				System.out.println("No such word in the dictionary. Try again.");
+				System.out.println("Invalid word. Try again.");
 			}
 			//// that completes the hand playing loop
 		}
